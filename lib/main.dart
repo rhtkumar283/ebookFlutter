@@ -29,7 +29,7 @@ class EbookMain extends StatelessWidget {
             child: Icon(
               Icons.grid_view,
               color: Colors.blueGrey,
-              size: 35,
+              size: 36,
             ),
           ),
         ),

@@ -26,7 +26,7 @@ class Search extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: SearchBar<Post>(
             onSearch: search,
             onItemFound: (Post post, int index) {

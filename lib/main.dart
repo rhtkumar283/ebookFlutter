@@ -1,3 +1,5 @@
+import './scrollView.dart';
+
 import './searchBar.dart';
 import 'package:flutter/material.dart';
 
@@ -46,8 +48,20 @@ class EbookMain extends StatelessWidget {
               )),
         ],
       ),
-      body: Search(),
-      //test
+      body: Column(
+        children: [
+          Container(
+            height: 100,
+            child: Search(),
+          ),
+          Container(
+            color: Colors.white,
+            padding: EdgeInsets.fromLTRB(22, 0, 0, 0),
+            height: 260,
+            child: ScrollSection(),
+          ),
+        ],
+      ),
     );
   }
 }

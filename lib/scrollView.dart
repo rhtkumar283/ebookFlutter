@@ -41,12 +41,12 @@ class ScrollSection extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  getWidget('assets/images/1.jpg', 'The Book of Two'),
-                  getWidget('assets/images/2.jpg', 'your text here'),
-                  getWidget('assets/images/3.jpg', 'your text here'),
-                  getWidget('assets/images/4.jpg', 'your text here'),
-                  getWidget('assets/images/5.jpg', 'your text here'),
-                  getWidget('assets/images/6.jpg', 'your text here'),
+                  getWidget('assets/images/1.jpg', 'The Book of Two..'),
+                  getWidget('assets/images/2.jpg', 'I\'ll be Seeing You'),
+                  getWidget('assets/images/3.jpg', 'Love Your Life'),
+                  getWidget('assets/images/4.jpg', 'The Last Druid'),
+                  getWidget('assets/images/5.jpg', 'The Purpose of Po..'),
+                  getWidget('assets/images/6.jpg', 'Olive, Again'),
                 ],
               ),
             ),

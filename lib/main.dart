@@ -1,5 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:ebookReader/widgets/navBar.dart';
+//import 'package:ebookReader/widgets/navBar.dart';
 import 'package:flutter/material.dart';
 
 import './widgets/scrollView1.dart';
@@ -116,7 +116,7 @@ class EbookMain extends StatelessWidget {
         height: 55,
         backgroundColor: Colors.grey[50],
         animationCurve: Curves.decelerate,
-        animationDuration: Duration(milliseconds: 300),
+        animationDuration: Duration(milliseconds: 900),
       ),
     );
   }

@@ -1,6 +1,6 @@
-# ebookReader
+# MyBookList
 
-A new Flutter project.
+An application developed using Flutter for books library to track what you plan to read, reading, dropped, or on-hold.
 
 ## Getting Started
 

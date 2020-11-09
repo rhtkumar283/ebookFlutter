@@ -1,4 +1,7 @@
-import './searchBar.dart';
+import 'package:ebookReader/widgets/ourTheme.dart';
+import 'package:ebookReader/widgets/scrollView.dart';
+
+import './widgets/searchBar.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -17,36 +20,20 @@ class MyApp extends StatelessWidget {
 class EbookMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    MediaQueryData mediaQuery = MediaQuery.of(context);
+
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: GestureDetector(
-          onTap: () {},
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Icon(
-              Icons.grid_view,
-              color: Colors.blueGrey,
-              size: 35,
-            ),
+      backgroundColor: OurTheme().primanryColor,
+      body: Column(
+        children: [
+          Container(
+            height: (mediaQuery.size.height - mediaQuery.padding.top) * 0.18,
+            child: Search(),
           ),
-        ),
-        actions: <Widget>[
-          Padding(
-              padding: EdgeInsets.only(right: 22),
-              child: GestureDetector(
-                onTap: () {},
-                child: Icon(
-                  Icons.login,
-                  color: Colors.blueGrey,
-                  size: 35,
-                ),
-              )),
+          ScrollSection(),
         ],
       ),
-      body: Search(),
+
       //test
     );
   }

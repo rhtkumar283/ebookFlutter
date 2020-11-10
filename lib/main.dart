@@ -1,7 +1,11 @@
-import 'package:ebookReader/widgets/ourTheme.dart';
-import 'package:ebookReader/widgets/scrollView.dart';
+import 'package:ebookReader/widgets/flatButtons.dart';
 
+import './widgets/verticalListView.dart';
+
+import './widgets/ourTheme.dart';
+import './widgets/scrollView.dart';
 import './widgets/searchBar.dart';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -24,16 +28,21 @@ class EbookMain extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: OurTheme().primanryColor,
-      body: Column(
-        children: [
-          Container(
-            height: (mediaQuery.size.height - mediaQuery.padding.top) * 0.18,
-            child: Search(),
-          ),
-          ScrollSection(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            //Search Widgets
+            Container(
+              height: (mediaQuery.size.height - mediaQuery.padding.top) * 0.18,
+              child: Search(),
+            ),
+            //Horizontal Scroll Section
+            ScrollSection(),
+            //Flat buttons
+            Foo(),
+          ],
+        ),
       ),
-
       //test
     );
   }

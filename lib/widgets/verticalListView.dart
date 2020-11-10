@@ -1,7 +1,7 @@
 import '../widgets/ourTheme.dart';
 import 'package:flutter/material.dart';
 
-class ScrollSection extends StatelessWidget {
+class VerticalListView extends StatelessWidget {
   Widget getWidget(imagePath, title, author) {
     return Container(
       //padding: EdgeInsets.only(left: 10),
@@ -64,7 +64,7 @@ class ScrollSection extends StatelessWidget {
           margin: EdgeInsets.only(bottom: 20),
           height: 250,
           child: ListView(
-            scrollDirection: Axis.horizontal,
+            scrollDirection: Axis.vertical,
             children: [
               getWidget(
                   'assets/images/1.jpg', 'The Book of Two..', 'Jodi Picoult'),

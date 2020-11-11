@@ -1,3 +1,4 @@
+import 'package:ebookReader/models/book.dart';
 import 'package:ebookReader/widgets/flatButtons.dart';
 
 import './widgets/verticalListView.dart';
@@ -22,6 +23,54 @@ class MyApp extends StatelessWidget {
 }
 
 class EbookMain extends StatelessWidget {
+  final List<Book> _books = [
+    Book(
+      id: 'b1',
+      img: Image.asset('assets/images/1.jpg'),
+      title: 'ABC Murder',
+      author: 'A',
+      description: 'ABC',
+      rating: 4.5,
+      genre: 'Thriller, Murder, Comedy',
+    ),
+    Book(
+      id: 'b2',
+      img: Image.asset('assets/images/1.jpg'),
+      title: 'ABD Murder',
+      author: 'B ',
+      description: 'ABD',
+      rating: 4.5,
+      genre: 'Thriller, Murder, Comedy',
+    ),
+    Book(
+      id: 'b1',
+      img: Image.asset('assets/images/1.jpg'),
+      title: 'ABC Murder',
+      author: 'C',
+      description: 'ABC',
+      rating: 4.5,
+      genre: 'Thriller, Murder, Comedy',
+    ),
+    Book(
+      id: 'b1',
+      img: Image.asset('assets/images/1.jpg'),
+      title: 'ABC Murder',
+      author: 'A',
+      description: 'ABC',
+      rating: 4.5,
+      genre: 'Thriller, Murder, Comedy',
+    ),
+    Book(
+      id: 'b1',
+      img: Image.asset('assets/images/1.jpg'),
+      title: 'ABC Murder',
+      author: 'A',
+      description: 'ABC',
+      rating: 4.5,
+      genre: 'Thriller, Murder, Comedy',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
@@ -36,10 +85,19 @@ class EbookMain extends StatelessWidget {
               height: (mediaQuery.size.height - mediaQuery.padding.top) * 0.18,
               child: Search(),
             ),
+
             //Horizontal Scroll Section
             ScrollSection(),
+
             //Flat buttons
             Foo(),
+
+            //Vertical List
+
+            Container(
+              height: 300,
+              child: VerticalList(_books),
+            ),
           ],
         ),
       ),

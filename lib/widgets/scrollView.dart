@@ -5,7 +5,7 @@ class ScrollSection extends StatelessWidget {
   Widget getWidget(imagePath, title, author) {
     return Container(
       //padding: EdgeInsets.only(left: 10),
-      decoration: BoxDecoration(shape: BoxShape.circle),
+      //decoration: BoxDecoration(shape: BoxShape.circle),
       margin: EdgeInsets.fromLTRB(0, 0, 15, 0),
       child: FittedBox(
         fit: BoxFit.contain,

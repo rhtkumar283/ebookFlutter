@@ -1,17 +1,18 @@
+import 'package:ebookReader/widgets/ourTheme.dart';
 import 'package:flutter/material.dart';
 
 class CustomListItem extends StatelessWidget {
   const CustomListItem({
     this.thumbnail,
     this.title,
-    this.user,
-    this.viewCount,
+    this.author,
+    this.genre,
   });
 
   final Widget thumbnail;
   final String title;
-  final String user;
-  final int viewCount;
+  final String author;
+  final String genre;
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +22,24 @@ class CustomListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Expanded(
-            flex: 2,
-            child: thumbnail,
+            flex: 1,
+            child: FittedBox(fit: BoxFit.fill, child: thumbnail),
           ),
           Expanded(
             flex: 3,
-            child: _VideoDescription(
-              title: title,
-              user: user,
-              viewCount: viewCount,
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: _VideoDescription(
+                title: title,
+                author: author,
+                genre: genre,
+              ),
             ),
           ),
-          const Icon(
-            Icons.more_vert,
-            size: 16.0,
+          Icon(
+            Icons.add,
+            size: 25,
+            color: OurTheme().secTextColor,
           ),
         ],
       ),
@@ -46,13 +51,13 @@ class _VideoDescription extends StatelessWidget {
   const _VideoDescription({
     Key key,
     this.title,
-    this.user,
-    this.viewCount,
+    this.author,
+    this.genre,
   }) : super(key: key);
 
   final String title;
-  final String user;
-  final int viewCount;
+  final String author;
+  final String genre;
 
   @override
   Widget build(BuildContext context) {
@@ -65,18 +70,19 @@ class _VideoDescription extends StatelessWidget {
             title,
             style: const TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: 14.0,
+              fontSize: 16.0,
+              color: Colors.white,
             ),
           ),
           const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
           Text(
-            user,
-            style: const TextStyle(fontSize: 10.0),
+            author,
+            style: const TextStyle(fontSize: 14.0, color: Colors.grey),
           ),
           const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
           Text(
-            '$viewCount views',
-            style: const TextStyle(fontSize: 10.0),
+            genre,
+            style: const TextStyle(fontSize: 10.0, color: Colors.grey),
           ),
         ],
       ),
@@ -92,23 +98,25 @@ class MyStatelessWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.all(8.0),
-      itemExtent: 106.0,
+      //itemExtent: 160.0,
       children: <CustomListItem>[
         CustomListItem(
-          user: 'Flutter',
-          viewCount: 999000,
-          thumbnail: Container(
-            decoration: const BoxDecoration(color: Colors.blue),
+          author: 'Jodi Picoult',
+          genre: 'Thriller',
+          thumbnail: ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.asset('assets/images/3.jpg'),
           ),
-          title: 'The Flutter YouTube Channel',
+          title: 'Love your Life',
         ),
         CustomListItem(
-          user: 'Dash',
-          viewCount: 884000,
-          thumbnail: Container(
-            decoration: const BoxDecoration(color: Colors.yellow),
+          author: 'Jodi Picoult',
+          genre: 'Mystery',
+          thumbnail: ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.asset('assets/images/4.jpg'),
           ),
-          title: 'Announcing Flutter 1.0',
+          title: 'The Last Druid',
         ),
       ],
     );

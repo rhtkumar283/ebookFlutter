@@ -11,6 +11,7 @@ class VerticalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      //itemExtent: 150,
       scrollDirection: Axis.vertical,
       itemBuilder: (ctx, index) {
         return BookItem(books[index]);

@@ -1,3 +1,4 @@
+import 'package:ebookReader/models/book.dart';
 import 'package:ebookReader/widgets/ourTheme.dart';
 import 'package:flutter/material.dart';
 
@@ -92,33 +93,38 @@ class _VideoDescription extends StatelessWidget {
 
 /// This is the stateless widget that the main application instantiates.
 class MyStatelessWidget extends StatelessWidget {
-  MyStatelessWidget({Key key}) : super(key: key);
+  MyStatelessWidget(this.book);
+
+  final List<Book> book;
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return ListView.builder(
       padding: const EdgeInsets.all(8.0),
-      //itemExtent: 160.0,
-      children: <CustomListItem>[
-        CustomListItem(
-          author: 'Jodi Picoult',
-          genre: 'Thriller',
-          thumbnail: ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Image.asset('assets/images/3.jpg'),
-          ),
-          title: 'Love your Life',
-        ),
-        CustomListItem(
-          author: 'Jodi Picoult',
-          genre: 'Mystery',
+      itemBuilder: (ctx, index) {
+        return CustomListItem(
+          author: book[index].author,
+          genre: book[index].genre,
           thumbnail: ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: Image.asset('assets/images/4.jpg'),
           ),
-          title: 'The Last Druid',
-        ),
-      ],
+          title: book[index].title,
+        );
+      },
+      itemCount: book.length,
+      //itemExtent: 160.0,
+      // children: <CustomListItem>[
+      //   CustomListItem(
+      //     author: 'Jodi Picoult',
+      //     genre: 'Thriller',
+      //     thumbnail: ClipRRect(
+      //       borderRadius: BorderRadius.circular(50),
+      //       child: Image.asset('assets/images/3.jpg'),
+      //     ),
+      //     title: 'Love your Life',
+      //   ),
+      // ],
     );
   }
 }

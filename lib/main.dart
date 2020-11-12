@@ -2,7 +2,7 @@ import 'package:ebookReader/models/book.dart';
 import 'package:ebookReader/widgets/bookItem1.dart';
 import 'package:ebookReader/widgets/flatButtons.dart';
 
-import 'package:flutter/services.dart';
+//import 'package:flutter/services.dart';
 
 import './widgets/ourTheme.dart';
 import './widgets/scrollView.dart';
@@ -98,7 +98,7 @@ class EbookMain extends StatelessWidget {
             SingleChildScrollView(
               child: Container(
                 height: 300,
-                child: MyStatelessWidget(),
+                child: MyStatelessWidget(_books),
               ),
             ),
           ],

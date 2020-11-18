@@ -21,36 +21,25 @@ class FooState extends State<Foo> {
 
   FooState(this.bookList);
 
+  List<Book> sortScrollList(String key) {
+    if (key == 'top rated') {
+      return topRated =
+          bookList.where((element) => element.category == 'top rated').toList();
+    } else if (key == 'best seller') {
+      return bestSeller = bookList
+          .where((element) => element.category == 'best seller')
+          .toList();
+    } else if (key == 'new releases') {
+      return newReleases = bookList
+          .where((element) => element.category == 'new releases')
+          .toList();
+    }
+    return null;
+  }
+
+  List<Book> topRated = [];
   List<Book> bestSeller = [];
-
-  List<Book> newReleases = [
-    Book(
-        id: 'b1',
-        img: Image.asset('assets/images/5.jpg'),
-        title: 'ABC Murder',
-        author: 'A',
-        description: 'ABC',
-        rating: 4.5,
-        genre: 'Thriller, Murder, Comedy',
-        category: 'top rated'),
-  ];
-
-  // List<Book> sortScrollList(String key) {
-  //   if (key == 'top rated') {
-  //     return topRated = bookList;
-  //   } else if (key == 'best seller') {
-  //     return bestSeller =
-  //         bookList.where((element) => element.category == 'best seller');
-  //   } else if (key == 'new releases') {
-  //     return newReleases =
-  //         bookList.where((element) => element.category == 'new releases');
-  //   }
-  //   return null;
-  // }
-
-  // List<Book> topRated = [];
-  // List<Book> bestSeller = [];
-  // List<Book> newReleases = [];
+  List<Book> newReleases = [];
 
   @override
   Widget build(BuildContext context) {
@@ -94,11 +83,11 @@ class FooState extends State<Foo> {
 
   Widget getBody() {
     if (buttonSelected == 0) {
-      return MyStatelessWidget(bookList);
+      return MyStatelessWidget(sortScrollList('top rated'));
     } else if (buttonSelected == 1) {
-      return MyStatelessWidget(bestSeller);
+      return MyStatelessWidget(sortScrollList('best seller'));
     } else {
-      return MyStatelessWidget(newReleases);
+      return MyStatelessWidget(sortScrollList('new releases'));
     }
   }
 }

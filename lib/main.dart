@@ -44,8 +44,35 @@ class EbookMain extends StatelessWidget {
         genre: 'Thriller, Murder, Comedy',
         category: 'best seller'),
     Book(
+        id: 'b2',
+        img: Image.asset('assets/images/1.jpg'),
+        title: 'ABD Murder',
+        author: 'B ',
+        description: 'ABD',
+        rating: 4.5,
+        genre: 'Thriller, Murder, Comedy',
+        category: 'best seller'),
+    Book(
         id: 'b1',
         img: Image.asset('assets/images/5.jpg'),
+        title: 'ABC Murder',
+        author: 'C',
+        description: 'ABC',
+        rating: 4.5,
+        genre: 'Thriller, Murder, Comedy',
+        category: 'new releases'),
+    Book(
+        id: 'b1',
+        img: Image.asset('assets/images/1.jpg'),
+        title: 'ABC Murder',
+        author: 'C',
+        description: 'ABC',
+        rating: 4.5,
+        genre: 'Thriller, Murder, Comedy',
+        category: 'new releases'),
+    Book(
+        id: 'b1',
+        img: Image.asset('assets/images/3.jpg'),
         title: 'ABC Murder',
         author: 'C',
         description: 'ABC',
@@ -88,7 +115,7 @@ class EbookMain extends StatelessWidget {
             ),
 
             //Horizontal Scroll Section
-            ScrollSection(),
+            ScrollSection(_books),
 
             //Flat buttons
             //Foo(_books),

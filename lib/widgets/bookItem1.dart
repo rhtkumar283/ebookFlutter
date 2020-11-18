@@ -24,7 +24,7 @@ class CustomListItem extends StatelessWidget {
         children: <Widget>[
           Expanded(
             flex: 1,
-            child: FittedBox(fit: BoxFit.fill, child: thumbnail),
+            child: thumbnail,
           ),
           Expanded(
             flex: 3,
@@ -99,33 +99,38 @@ class MyStatelessWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: const EdgeInsets.all(8.0),
-      shrinkWrap: true,
-      itemBuilder: (ctx, index) {
-        return CustomListItem(
-          author: book[index].author,
-          genre: book[index].genre,
-          thumbnail: ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: book[index].img,
-          ),
-          title: book[index].title,
-        );
-      },
-      itemCount: book.length,
-      //itemExtent: 160.0,
-      // children: <CustomListItem>[
-      //   CustomListItem(
-      //     author: 'Jodi Picoult',
-      //     genre: 'Thriller',
-      //     thumbnail: ClipRRect(
-      //       borderRadius: BorderRadius.circular(50),
-      //       child: Image.asset('assets/images/3.jpg'),
-      //     ),
-      //     title: 'Love your Life',
-      //   ),
-      // ],
+    return SingleChildScrollView(
+      child: Container(
+        height: 300,
+        child: ListView.builder(
+          padding: const EdgeInsets.all(8.0),
+          shrinkWrap: true,
+          itemBuilder: (ctx, index) {
+            return CustomListItem(
+              author: book[index].author,
+              genre: book[index].genre,
+              thumbnail: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: book[index].img,
+              ),
+              title: book[index].title,
+            );
+          },
+          itemCount: book.length,
+          //itemExtent: 160.0,
+          // children: <CustomListItem>[
+          //   CustomListItem(
+          //     author: 'Jodi Picoult',
+          //     genre: 'Thriller',
+          //     thumbnail: ClipRRect(
+          //       borderRadius: BorderRadius.circular(50),
+          //       child: Image.asset('assets/images/3.jpg'),
+          //     ),
+          //     title: 'Love your Life',
+          //   ),
+          // ],
+        ),
+      ),
     );
   }
 }

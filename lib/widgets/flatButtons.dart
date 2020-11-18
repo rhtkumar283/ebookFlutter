@@ -12,10 +12,6 @@ class Foo extends StatefulWidget {
 class FooState extends State<Foo> {
   int buttonSelected = 0;
 
-  void showverticalList() {
-    VerticalListView();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Row(

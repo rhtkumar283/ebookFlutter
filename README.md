@@ -1,6 +1,6 @@
 # MyBookList
 
-An application developed using Flutter for books library to track what you plan to read, reading, dropped, or on-hold.
+An application under development using Flutter for books library to track what you plan to read, reading, dropped, or on-hold.
 
 ## Getting Started
 

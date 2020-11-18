@@ -9,14 +9,15 @@ class Book {
   final String description;
   final double rating;
   final String genre;
+  final String category;
 
-  Book({
-    @required this.id,
-    @required this.img,
-    @required this.title,
-    @required this.author,
-    @required this.description,
-    @required this.rating,
-    @required this.genre,
-  });
+  Book(
+      {@required this.id,
+      @required this.img,
+      @required this.title,
+      @required this.author,
+      @required this.description,
+      @required this.rating,
+      @required this.genre,
+      @required this.category});
 }

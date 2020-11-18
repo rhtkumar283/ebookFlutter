@@ -1,5 +1,5 @@
 import 'package:ebookReader/models/book.dart';
-import 'package:ebookReader/widgets/bookItem1.dart';
+//import 'package:ebookReader/widgets/bookItem1.dart';
 import 'package:ebookReader/widgets/flatButtons.dart';
 
 //import 'package:flutter/services.dart';
@@ -26,50 +26,50 @@ class MyApp extends StatelessWidget {
 class EbookMain extends StatelessWidget {
   final List<Book> _books = [
     Book(
-      id: 'b1',
-      img: Image.asset('assets/images/1.jpg'),
-      title: 'ABC Murder',
-      author: 'A',
-      description: 'ABC',
-      rating: 4.5,
-      genre: 'Thriller, Murder, Comedy',
-    ),
+        id: 'b1',
+        img: Image.asset('assets/images/1.jpg'),
+        title: 'ABC Murder',
+        author: 'A',
+        description: 'ABC',
+        rating: 4.5,
+        genre: 'Thriller, Murder, Comedy',
+        category: 'top rated'),
     Book(
-      id: 'b2',
-      img: Image.asset('assets/images/1.jpg'),
-      title: 'ABD Murder',
-      author: 'B ',
-      description: 'ABD',
-      rating: 4.5,
-      genre: 'Thriller, Murder, Comedy',
-    ),
+        id: 'b2',
+        img: Image.asset('assets/images/2.jpg'),
+        title: 'ABD Murder',
+        author: 'B ',
+        description: 'ABD',
+        rating: 4.5,
+        genre: 'Thriller, Murder, Comedy',
+        category: 'best seller'),
     Book(
-      id: 'b1',
-      img: Image.asset('assets/images/1.jpg'),
-      title: 'ABC Murder',
-      author: 'C',
-      description: 'ABC',
-      rating: 4.5,
-      genre: 'Thriller, Murder, Comedy',
-    ),
+        id: 'b1',
+        img: Image.asset('assets/images/5.jpg'),
+        title: 'ABC Murder',
+        author: 'C',
+        description: 'ABC',
+        rating: 4.5,
+        genre: 'Thriller, Murder, Comedy',
+        category: 'new releases'),
     Book(
-      id: 'b1',
-      img: Image.asset('assets/images/1.jpg'),
-      title: 'ABC Murder',
-      author: 'A',
-      description: 'ABC',
-      rating: 4.5,
-      genre: 'Thriller, Murder, Comedy',
-    ),
+        id: 'b1',
+        img: Image.asset('assets/images/3.jpg'),
+        title: 'ABC Murder',
+        author: 'A',
+        description: 'ABC',
+        rating: 4.5,
+        genre: 'Thriller, Murder, Comedy',
+        category: 'top rated'),
     Book(
-      id: 'b1',
-      img: Image.asset('assets/images/1.jpg'),
-      title: 'ABC Murder',
-      author: 'A',
-      description: 'ABC',
-      rating: 4.5,
-      genre: 'Thriller, Murder, Comedy',
-    ),
+        id: 'b1',
+        img: Image.asset('assets/images/5.jpg'),
+        title: 'ABC Murder',
+        author: 'A',
+        description: 'ABC',
+        rating: 4.5,
+        genre: 'Thriller, Murder, Comedy',
+        category: 'top rated'),
   ];
 
   @override
@@ -91,16 +91,12 @@ class EbookMain extends StatelessWidget {
             ScrollSection(),
 
             //Flat buttons
-            Foo(),
+            //Foo(_books),
 
             //Vertical List
-
-            SingleChildScrollView(
-              child: Container(
-                height: 300,
-                child: MyStatelessWidget(_books),
-              ),
-            ),
+            // SingleChildScrollView(
+            //     child: Container(height: 350, child: Foo(_books))),
+            Foo(_books),
           ],
         ),
       ),

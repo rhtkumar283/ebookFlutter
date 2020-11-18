@@ -101,13 +101,14 @@ class MyStatelessWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: const EdgeInsets.all(8.0),
+      shrinkWrap: true,
       itemBuilder: (ctx, index) {
         return CustomListItem(
           author: book[index].author,
           genre: book[index].genre,
           thumbnail: ClipRRect(
             borderRadius: BorderRadius.circular(50),
-            child: Image.asset('assets/images/4.jpg'),
+            child: book[index].img,
           ),
           title: book[index].title,
         );

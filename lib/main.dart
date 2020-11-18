@@ -36,7 +36,7 @@ class EbookMain extends StatelessWidget {
     ),
     Book(
       id: 'b2',
-      img: Image.asset('assets/images/1.jpg'),
+      img: Image.asset('assets/images/2.jpg'),
       title: 'ABD Murder',
       author: 'B ',
       description: 'ABD',
@@ -45,7 +45,7 @@ class EbookMain extends StatelessWidget {
     ),
     Book(
       id: 'b1',
-      img: Image.asset('assets/images/1.jpg'),
+      img: Image.asset('assets/images/3.jpg'),
       title: 'ABC Murder',
       author: 'C',
       description: 'ABC',
@@ -54,7 +54,7 @@ class EbookMain extends StatelessWidget {
     ),
     Book(
       id: 'b1',
-      img: Image.asset('assets/images/1.jpg'),
+      img: Image.asset('assets/images/4.jpg'),
       title: 'ABC Murder',
       author: 'A',
       description: 'ABC',
@@ -63,7 +63,7 @@ class EbookMain extends StatelessWidget {
     ),
     Book(
       id: 'b1',
-      img: Image.asset('assets/images/1.jpg'),
+      img: Image.asset('assets/images/5.jpg'),
       title: 'ABC Murder',
       author: 'A',
       description: 'ABC',
@@ -88,7 +88,7 @@ class EbookMain extends StatelessWidget {
             ),
 
             //Horizontal Scroll Section
-            ScrollSection(),
+            ScrollSection(_books),
 
             //Flat buttons
             Foo(),

@@ -107,7 +107,7 @@ class MyStatelessWidget extends StatelessWidget {
           genre: book[index].genre,
           thumbnail: ClipRRect(
             borderRadius: BorderRadius.circular(50),
-            child: Image.asset('assets/images/4.jpg'),
+            child: book[index].img,
           ),
           title: book[index].title,
         );

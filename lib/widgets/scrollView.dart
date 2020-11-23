@@ -1,7 +1,7 @@
-import 'package:ebookReader/models/book.dart';
-
-import '../widgets/ourTheme.dart';
 import 'package:flutter/material.dart';
+
+import '../models/book.dart';
+import '../widgets/ourTheme.dart';
 
 class ScrollSection extends StatelessWidget {
   final List<Book> books;
@@ -59,7 +59,9 @@ class ScrollSection extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 'see more',
-                style: TextStyle(color: OurTheme().secTextColor),
+                style: TextStyle(
+                    color: OurTheme().secTextColor,
+                    decoration: TextDecoration.underline),
               ),
             )
           ],
@@ -68,7 +70,7 @@ class ScrollSection extends StatelessWidget {
           padding: EdgeInsets.only(left: 10),
           color: OurTheme().primanryColor,
           margin: EdgeInsets.only(bottom: 20),
-          height: 250,
+          height: 230,
           child: ListView.builder(
             itemBuilder: (context, index) {
               return getWidget(
@@ -76,19 +78,6 @@ class ScrollSection extends StatelessWidget {
             },
             scrollDirection: Axis.horizontal,
             itemCount: books.length,
-            // children: [
-            //   getWidget(
-            //       'assets/images/1.jpg', 'The Book of Two..', 'Jodi Picoult'),
-            //   getWidget(
-            //       'assets/images/2.jpg', 'I\'ll be Seeing You', 'Jodi Picoult'),
-            //   getWidget(
-            //       'assets/images/3.jpg', 'Love Your Life', 'Jodi Picoult'),
-            //   getWidget(
-            //       'assets/images/4.jpg', 'The Last Druid', 'Jodi Picoult'),
-            //   getWidget(
-            //       'assets/images/5.jpg', 'The Purpose of Po..', 'Jodi Picoult'),
-            //   getWidget('assets/images/6.jpg', 'Olive, Again', 'Jodi Picoult'),
-            // ],
           ),
         ),
       ],

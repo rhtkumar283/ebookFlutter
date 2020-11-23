@@ -1,6 +1,7 @@
-import 'package:ebookReader/models/book.dart';
-import 'package:ebookReader/widgets/ourTheme.dart';
 import 'package:flutter/material.dart';
+
+import '../models/book.dart';
+import '../widgets/ourTheme.dart';
 
 class BookItem extends StatelessWidget {
   final Book books;

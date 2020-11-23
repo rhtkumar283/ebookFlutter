@@ -1,7 +1,7 @@
-import 'package:ebookReader/models/book.dart';
 import 'package:flutter/material.dart';
 
-import 'bookItem.dart';
+import './bookItem.dart';
+import '../models/book.dart';
 
 class VerticalList extends StatelessWidget {
   final List<Book> books;

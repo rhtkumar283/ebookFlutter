@@ -1,5 +1,7 @@
-import 'package:ebookReader/models/book.dart';
-import 'package:ebookReader/widgets/ourTheme.dart';
+import '../models/book.dart';
+import '../widgets/ourTheme.dart';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomListItem extends StatelessWidget {
@@ -37,10 +39,13 @@ class CustomListItem extends StatelessWidget {
               ),
             ),
           ),
-          Icon(
-            Icons.add,
-            size: 25,
-            color: OurTheme().secTextColor,
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: Icon(
+              CupertinoIcons.bookmark,
+              size: 25,
+              color: OurTheme().secTextColor,
+            ),
           ),
         ],
       ),
@@ -80,11 +85,71 @@ class _VideoDescription extends StatelessWidget {
             author,
             style: const TextStyle(fontSize: 14.0, color: Colors.grey),
           ),
-          const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
-          Text(
-            genre,
-            style: const TextStyle(fontSize: 10.0, color: Colors.grey),
+          const Padding(padding: EdgeInsets.symmetric(vertical: 18.0)),
+          Row(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                height: 30,
+                width: 65,
+                child: FlatButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(7),
+                  ),
+                  disabledColor: Colors.red[50],
+                  color: Color.fromRGBO(51, 40, 51, 0.8),
+                  onPressed: () {},
+                  child: Text(
+                    genre.split(' ').first,
+                    style: const TextStyle(
+                        fontSize: 10.0,
+                        color: Color.fromRGBO(223, 93, 107, 0.8)),
+                  ),
+                ),
+              ),
+              SizedBox(width: 3),
+              SizedBox(
+                height: 30,
+                width: 65,
+                child: FlatButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(7),
+                  ),
+                  color: Color.fromRGBO(34, 38, 61, 0.8),
+                  onPressed: () {},
+                  child: Text(
+                    genre.split(' ').elementAt(1),
+                    style: const TextStyle(
+                      fontSize: 10.0,
+                      color: Color.fromRGBO(70, 75, 196, 1),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(width: 3),
+              SizedBox(
+                height: 30,
+                width: 70,
+                child: FlatButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(7),
+                  ),
+                  color: Color.fromRGBO(34, 52, 50, 0.8),
+                  onPressed: () {},
+                  child: Text(
+                    genre.split(' ').last,
+                    style: const TextStyle(
+                        fontSize: 10.0, color: Color.fromRGBO(61, 160, 87, 1)),
+                  ),
+                ),
+              ),
+            ],
           ),
+
+          // Text(
+          //   genre,
+          //   style: const TextStyle(fontSize: 10.0, color: Colors.grey),
+          // ),
         ],
       ),
     );
@@ -101,7 +166,7 @@ class MyStatelessWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        height: 300,
+        height: 275,
         child: ListView.builder(
           padding: const EdgeInsets.all(8.0),
           shrinkWrap: true,
@@ -110,25 +175,13 @@ class MyStatelessWidget extends StatelessWidget {
               author: book[index].author,
               genre: book[index].genre,
               thumbnail: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(15),
                 child: book[index].img,
               ),
               title: book[index].title,
             );
           },
           itemCount: book.length,
-          //itemExtent: 160.0,
-          // children: <CustomListItem>[
-          //   CustomListItem(
-          //     author: 'Jodi Picoult',
-          //     genre: 'Thriller',
-          //     thumbnail: ClipRRect(
-          //       borderRadius: BorderRadius.circular(50),
-          //       child: Image.asset('assets/images/3.jpg'),
-          //     ),
-          //     title: 'Love your Life',
-          //   ),
-          // ],
         ),
       ),
     );

@@ -166,23 +166,40 @@ class MyStatelessWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        height: 275,
-        child: ListView.builder(
-          padding: const EdgeInsets.all(8.0),
-          shrinkWrap: true,
-          itemBuilder: (ctx, index) {
-            return CustomListItem(
-              author: book[index].author,
-              genre: book[index].genre,
-              thumbnail: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: book[index].img,
+        height: 270,
+        child: CustomScrollView(slivers: [
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => CustomListItem(
+                author: book[index].author,
+                genre: book[index].genre,
+                thumbnail: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: book[index].img,
+                ),
+                title: book[index].title,
               ),
-              title: book[index].title,
-            );
-          },
-          itemCount: book.length,
-        ),
+              childCount: book.length,
+            ),
+          ),
+        ]),
+
+        // child: ListView.builder(
+        //   padding: const EdgeInsets.all(8.0),
+        //   shrinkWrap: true,
+        //   itemBuilder: (ctx, index) {
+        //     return CustomListItem(
+        //       author: book[index].author,
+        //       genre: book[index].genre,
+        //       thumbnail: ClipRRect(
+        //         borderRadius: BorderRadius.circular(15),
+        //         child: book[index].img,
+        //       ),
+        //       title: book[index].title,
+        //     );
+        //   },
+        //   itemCount: book.length,
+        // ),
       ),
     );
   }

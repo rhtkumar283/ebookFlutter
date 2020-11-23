@@ -1,3 +1,5 @@
+//import 'package:eBook/widgets/ourTheme.dart';
+import 'ourTheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -71,7 +73,9 @@ class FooState extends State<Foo> {
           buttonSelected = index;
         });
       },
-      textColor: buttonSelected == index ? Colors.white : Colors.grey,
+      textColor: buttonSelected == index
+          ? OurTheme().buttonActive
+          : OurTheme().buttonInactive,
       child: Text(
         "$text",
         style: TextStyle(

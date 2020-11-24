@@ -6,6 +6,6 @@ class OurTheme {
   final textColor = Colors.white;
   final secTextColor = Colors.grey;
   final buttonActive = Color.fromRGBO(255, 255, 255, 1);
-  final buttonInactive = Color.fromRGBO(46, 50, 59, 1);
+  final buttonInactive = Colors.grey[700];
   final double headingSize = 18.00;
 }

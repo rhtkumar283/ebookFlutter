@@ -39,24 +39,24 @@ class CustomNavBarWidget extends StatelessWidget {
               child: item.icon,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 0.0),
-            child: Material(
-              type: MaterialType.transparency,
-              child: FittedBox(
-                  child: Text(
-                item.title,
-                style: TextStyle(
-                    color: isSelected
-                        ? (item.activeContentColor == null
-                            ? item.activeColor
-                            : item.activeContentColor)
-                        : item.inactiveColor,
-                    fontWeight: FontWeight.w400,
-                    fontSize: item.titleFontSize),
-              )),
-            ),
-          )
+          // Padding(
+          //   padding: const EdgeInsets.only(top: 0.0),
+          //   child: Material(
+          //     type: MaterialType.transparency,
+          //     child: FittedBox(
+          //         child: Text(
+          //       item.title,
+          //       style: TextStyle(
+          //           color: isSelected
+          //               ? (item.activeContentColor == null
+          //                   ? item.activeColor
+          //                   : item.activeContentColor)
+          //               : item.inactiveColor,
+          //           fontWeight: FontWeight.w400,
+          //           fontSize: item.titleFontSize),
+          //     )),
+          //   ),
+          // )
         ],
       ),
     );

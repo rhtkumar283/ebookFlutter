@@ -19,7 +19,7 @@ class CustomNavBarWidget extends StatelessWidget {
   Widget _buildItem(PersistentBottomNavBarItem item, bool isSelected) {
     return Container(
       alignment: Alignment.center,
-      height: 90.0,
+      //height: 150.0,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,26 +65,23 @@ class CustomNavBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: OurTheme().primanryColor,
-      child: Container(
-        width: double.infinity,
-        height: (MediaQuery.of(context).size.height -
-                MediaQuery.of(context).padding.top) *
-            0.07,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: items.map((item) {
-            var index = items.indexOf(item);
-            return Flexible(
-              child: GestureDetector(
-                onTap: () {
-                  this.onItemSelected(index);
-                },
-                child: _buildItem(item, selectedIndex == index),
-              ),
-            );
-          }).toList(),
-        ),
+      width: double.infinity,
+      height: (MediaQuery.of(context).size.height -
+              MediaQuery.of(context).padding.top) *
+          0.07,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: items.map((item) {
+          var index = items.indexOf(item);
+          return Flexible(
+            child: GestureDetector(
+              onTap: () {
+                this.onItemSelected(index);
+              },
+              child: _buildItem(item, selectedIndex == index),
+            ),
+          );
+        }).toList(),
       ),
     );
   }

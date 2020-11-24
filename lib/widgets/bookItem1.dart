@@ -166,9 +166,19 @@ class MyStatelessWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        height: (MediaQuery.of(context).size.height -
-                MediaQuery.of(context).padding.top) *
-            0.38,
+        height: MediaQuery.of(context).size.height -
+            (MediaQuery.of(context).padding.top +
+                    ((MediaQuery.of(context).size.height -
+                            MediaQuery.of(context).padding.top) *
+                        0.20) +
+                    ((MediaQuery.of(context).size.height -
+                            MediaQuery.of(context).padding.top) *
+                        0.32) +
+                    ((MediaQuery.of(context).size.height -
+                            MediaQuery.of(context).padding.top) *
+                        0.07)) *
+                1.07,
+
         child: CustomScrollView(slivers: [
           SliverList(
             delegate: SliverChildBuilderDelegate(

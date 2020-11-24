@@ -28,7 +28,7 @@ class CustomNavBarWidget extends StatelessWidget {
           Flexible(
             child: IconTheme(
               data: IconThemeData(
-                  size: 20.0,
+                  size: 25.0,
                   color: isSelected
                       ? (item.activeContentColor == null
                           ? item.activeColor

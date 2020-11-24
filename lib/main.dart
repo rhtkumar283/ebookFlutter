@@ -104,7 +104,7 @@ class EbookMain extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Icon(
           CupertinoIcons.house_alt_fill,
-          size: 25,
+          //size: 25,
         ),
         //title: (" "),
         activeColor: OurTheme().buttonActive,
@@ -113,7 +113,7 @@ class EbookMain extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Icon(
           CupertinoIcons.bell_fill,
-          size: 25,
+          //size: 25,
         ),
         //title: (" "),
         activeColor: OurTheme().buttonActive,
@@ -122,7 +122,7 @@ class EbookMain extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Icon(
           CupertinoIcons.person_crop_circle_fill,
-          size: 25,
+          //size: 25,
         ),
         //title: (" "),
         activeColor: OurTheme().buttonActive,
@@ -131,7 +131,7 @@ class EbookMain extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Icon(
           CupertinoIcons.gear_alt_fill,
-          size: 25,
+          //size: 25,
         ),
         //title: (" "),
         activeColor: OurTheme().buttonActive,

@@ -30,7 +30,11 @@ class CustomListItem extends StatelessWidget {
         children: <Widget>[
           Expanded(
             flex: 1,
-            child: thumbnail,
+            child: Padding(
+              padding:
+                  EdgeInsets.only(left: SizeConfig.safeBlockHorizontal * 1.5),
+              child: thumbnail,
+            ),
           ),
           Expanded(
             flex: 3,
@@ -183,7 +187,7 @@ class MyStatelessWidget extends StatelessWidget {
     SizeConfig().init(context);
     return SingleChildScrollView(
       child: Container(
-        height: SizeConfig.safeBlockVertical * 36,
+        height: SizeConfig.safeBlockVertical * 39.8,
 
         child: CustomScrollView(slivers: [
           SliverList(

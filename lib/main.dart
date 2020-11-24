@@ -146,14 +146,27 @@ class EbookMain extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: OurTheme().primanryColor,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('MyBookList'),
+        backgroundColor: OurTheme().primanryColor,
+        elevation: 0,
+        leading: Icon(
+          CupertinoIcons.person_fill,
+          color: OurTheme().buttonActive,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             //Search Widgets
-            Container(
-              height: (mediaQuery.size.height - mediaQuery.padding.top) * 0.18,
-              child: Search(),
-            ),
+            // Container(
+            //   height: (mediaQuery.size.height -
+            //           mediaQuery.padding.top -
+            //           kBottomNavigationBarHeight) *
+            //       0.17,
+            //   child: Search(),
+            // ),
 
             //Horizontal Scroll Section
             ScrollSection(_books),

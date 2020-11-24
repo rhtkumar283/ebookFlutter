@@ -66,9 +66,7 @@ class CustomNavBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: (MediaQuery.of(context).size.height -
-              MediaQuery.of(context).padding.top) *
-          0.07,
+      height: kBottomNavigationBarHeight,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: items.map((item) {

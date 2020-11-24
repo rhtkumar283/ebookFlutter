@@ -1,3 +1,5 @@
+import 'package:flutter/rendering.dart';
+
 import '../models/book.dart';
 import '../widgets/ourTheme.dart';
 
@@ -85,7 +87,10 @@ class _VideoDescription extends StatelessWidget {
             author,
             style: const TextStyle(fontSize: 14.0, color: Colors.grey),
           ),
-          const Padding(padding: EdgeInsets.symmetric(vertical: 18.0)),
+          const Padding(
+              padding: EdgeInsets.symmetric(
+            vertical: 45,
+          )),
           Row(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -166,18 +171,11 @@ class MyStatelessWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        height: MediaQuery.of(context).size.height -
-            (MediaQuery.of(context).padding.top +
-                    ((MediaQuery.of(context).size.height -
-                            MediaQuery.of(context).padding.top) *
-                        0.20) +
-                    ((MediaQuery.of(context).size.height -
-                            MediaQuery.of(context).padding.top) *
-                        0.32) +
-                    ((MediaQuery.of(context).size.height -
-                            MediaQuery.of(context).padding.top) *
-                        0.07)) *
-                1.07,
+        height: (MediaQuery.of(context).size.height -
+                (MediaQuery.of(context).padding.top +
+                    kToolbarHeight +
+                    kBottomNavigationBarHeight)) *
+            0.48,
 
         child: CustomScrollView(slivers: [
           SliverList(

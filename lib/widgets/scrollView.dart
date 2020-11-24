@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/book.dart';
+import '../config/sizeConfig.dart';
 import '../widgets/ourTheme.dart';
 
 class ScrollSection extends StatelessWidget {
@@ -39,6 +40,7 @@ class ScrollSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -70,11 +72,7 @@ class ScrollSection extends StatelessWidget {
           padding: EdgeInsets.only(left: 10),
           color: OurTheme().primanryColor,
           margin: EdgeInsets.only(bottom: 20),
-          height: (MediaQuery.of(context).size.height -
-                  (MediaQuery.of(context).padding.top +
-                      kToolbarHeight +
-                      kBottomNavigationBarHeight)) *
-              0.30,
+          height: SizeConfig.safeBlockVertical * 30,
           child: ListView.builder(
             itemBuilder: (context, index) {
               return getWidget(

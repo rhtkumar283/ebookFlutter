@@ -1,10 +1,10 @@
 import 'package:flutter/rendering.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../models/book.dart';
 import '../widgets/ourTheme.dart';
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import '../config/sizeConfig.dart';
 
 class CustomListItem extends StatelessWidget {
   const CustomListItem({
@@ -169,13 +169,10 @@ class MyStatelessWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SingleChildScrollView(
       child: Container(
-        height: (MediaQuery.of(context).size.height -
-                (MediaQuery.of(context).padding.top +
-                    kToolbarHeight +
-                    kBottomNavigationBarHeight)) *
-            0.48,
+        height: SizeConfig.safeBlockVertical * 40,
 
         child: CustomScrollView(slivers: [
           SliverList(

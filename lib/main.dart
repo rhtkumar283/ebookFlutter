@@ -1,16 +1,18 @@
-import 'widgets/ourTheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:flutter/material.dart';
 
 import './widgets/ourTheme.dart';
 import './widgets/scrollView.dart';
-import './widgets/searchBar.dart';
+//import './widgets/searchBar.dart';
 import './models/book.dart';
+//import '../widgets/ourTheme.dart';
 import './widgets/flatButtons.dart';
 import './widgets/navBar.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -142,7 +144,7 @@ class EbookMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MediaQueryData mediaQuery = MediaQuery.of(context);
+    //MediaQueryData mediaQuery = MediaQuery.of(context);
 
     return Scaffold(
       backgroundColor: OurTheme().primanryColor,

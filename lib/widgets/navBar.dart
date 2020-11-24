@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
-import '../widgets/ourTheme.dart';
+//import '../widgets/ourTheme.dart';
 
 class CustomNavBarWidget extends StatelessWidget {
   final int selectedIndex;

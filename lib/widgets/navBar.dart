@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
+import '../config/sizeConfig.dart';
 //import '../widgets/ourTheme.dart';
 
 class CustomNavBarWidget extends StatelessWidget {
@@ -64,9 +65,10 @@ class CustomNavBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Container(
       width: double.infinity,
-      height: kBottomNavigationBarHeight,
+      height: SizeConfig.safeBlockVertical * 7,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: items.map((item) {

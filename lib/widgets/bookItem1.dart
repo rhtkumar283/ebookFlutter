@@ -22,7 +22,9 @@ class CustomListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5.0),
+      padding: EdgeInsets.symmetric(
+        vertical: SizeConfig.safeBlockVertical * 0.6,
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -33,7 +35,7 @@ class CustomListItem extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Padding(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(SizeConfig.safeBlockHorizontal * 2),
               child: _VideoDescription(
                 title: title,
                 author: author,
@@ -42,10 +44,11 @@ class CustomListItem extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            padding: EdgeInsets.fromLTRB(
+                0, SizeConfig.safeBlockVertical * 1.8, 0, 0),
             child: Icon(
               CupertinoIcons.bookmark,
-              size: 25,
+              size: SizeConfig.safeBlockHorizontal * 6,
               color: OurTheme().secTextColor,
             ),
           ),
@@ -69,34 +72,41 @@ class _VideoDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Padding(
-      padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+      padding: EdgeInsets.fromLTRB(
+          SizeConfig.safeBlockHorizontal * 0.6, 0.0, 0.0, 0.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
             title,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: 16.0,
+              fontSize: SizeConfig.safeBlockHorizontal * 3.8,
               color: Colors.white,
             ),
           ),
-          const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
+          Padding(
+              padding: EdgeInsets.symmetric(
+            vertical: SizeConfig.safeBlockVertical * 0.3,
+          )),
           Text(
             author,
-            style: const TextStyle(fontSize: 14.0, color: Colors.grey),
+            style: TextStyle(
+                fontSize: SizeConfig.safeBlockHorizontal * 3,
+                color: Colors.grey),
           ),
-          const Padding(
+          Padding(
               padding: EdgeInsets.symmetric(
-            vertical: 45,
+            vertical: SizeConfig.safeBlockVertical * 3.5,
           )),
           Row(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                height: 30,
-                width: 65,
+                height: SizeConfig.safeBlockVertical * 4.3,
+                width: SizeConfig.safeBlockHorizontal * 16,
                 child: FlatButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(7),
@@ -106,16 +116,16 @@ class _VideoDescription extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     genre.split(' ').first,
-                    style: const TextStyle(
-                        fontSize: 10.0,
+                    style: TextStyle(
+                        fontSize: SizeConfig.safeBlockHorizontal * 2.2,
                         color: Color.fromRGBO(223, 93, 107, 0.8)),
                   ),
                 ),
               ),
-              SizedBox(width: 3),
+              SizedBox(width: SizeConfig.safeBlockHorizontal * 1),
               SizedBox(
-                height: 30,
-                width: 65,
+                height: SizeConfig.safeBlockVertical * 4.3,
+                width: SizeConfig.safeBlockHorizontal * 16,
                 child: FlatButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(7),
@@ -124,17 +134,17 @@ class _VideoDescription extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     genre.split(' ').elementAt(1),
-                    style: const TextStyle(
-                      fontSize: 10.0,
+                    style: TextStyle(
+                      fontSize: SizeConfig.safeBlockHorizontal * 2.2,
                       color: Color.fromRGBO(70, 75, 196, 1),
                     ),
                   ),
                 ),
               ),
-              SizedBox(width: 3),
+              SizedBox(width: SizeConfig.safeBlockHorizontal * 1),
               SizedBox(
-                height: 30,
-                width: 70,
+                height: SizeConfig.safeBlockVertical * 4.3,
+                width: SizeConfig.safeBlockHorizontal * 17,
                 child: FlatButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(7),
@@ -143,8 +153,9 @@ class _VideoDescription extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     genre.split(' ').last,
-                    style: const TextStyle(
-                        fontSize: 10.0, color: Color.fromRGBO(61, 160, 87, 1)),
+                    style: TextStyle(
+                        fontSize: SizeConfig.safeBlockHorizontal * 2.2,
+                        color: Color.fromRGBO(61, 160, 87, 1)),
                   ),
                 ),
               ),
@@ -172,7 +183,7 @@ class MyStatelessWidget extends StatelessWidget {
     SizeConfig().init(context);
     return SingleChildScrollView(
       child: Container(
-        height: SizeConfig.safeBlockVertical * 40,
+        height: SizeConfig.safeBlockVertical * 36,
 
         child: CustomScrollView(slivers: [
           SliverList(

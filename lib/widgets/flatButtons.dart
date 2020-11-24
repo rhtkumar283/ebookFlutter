@@ -1,9 +1,9 @@
 //import 'package:eBook/widgets/ourTheme.dart';
-import 'ourTheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import './ourTheme.dart';
+import '../config/sizeConfig.dart';
 import '../models/book.dart';
 import './bookItem1.dart';
 
@@ -65,10 +65,10 @@ class FooState extends State<Foo> {
       // //clipBehavior: ,
       // shape: Border(left: BorderSide.none),
       onPressed: () {
-        Text(
-          'data',
-          style: TextStyle(color: Colors.amber),
-        );
+        // Text(
+        //   'data',
+        //   style: TextStyle(color: Colors.amber),
+        // );
         setState(() {
           buttonSelected = index;
         });
@@ -79,7 +79,7 @@ class FooState extends State<Foo> {
       child: Text(
         "$text",
         style: TextStyle(
-          fontSize: OurTheme().headingSize,
+          fontSize: SizeConfig.safeBlockHorizontal * 4,
         ),
       ),
     );

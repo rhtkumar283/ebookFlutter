@@ -13,7 +13,8 @@ class ScrollSection extends StatelessWidget {
     return Container(
       //padding: EdgeInsets.only(left: 10),
       //decoration: BoxDecoration(shape: BoxShape.circle),
-      margin: EdgeInsets.fromLTRB(0, 0, 15, 0),
+      margin:
+          EdgeInsets.fromLTRB(0, 0, SizeConfig.safeBlockHorizontal * 2.5, 0),
       child: FittedBox(
         fit: BoxFit.contain,
         child: Column(children: <Widget>[
@@ -22,16 +23,20 @@ class ScrollSection extends StatelessWidget {
             child: image,
           ),
           SizedBox(
-            height: 18,
+            height: SizeConfig.safeBlockVertical * 3,
           ),
           Text(
             title,
             style: TextStyle(
-                fontSize: 50, color: Colors.grey, fontWeight: FontWeight.bold),
+                fontSize: SizeConfig.safeBlockHorizontal * 13,
+                color: Colors.grey,
+                fontWeight: FontWeight.bold),
           ),
           Text(
             author,
-            style: TextStyle(fontSize: 45, color: OurTheme().secTextColor),
+            style: TextStyle(
+                fontSize: SizeConfig.safeBlockHorizontal * 11,
+                color: OurTheme().secTextColor),
           )
         ]),
       ),
@@ -47,12 +52,13 @@ class ScrollSection extends StatelessWidget {
         Row(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 15),
+              padding:
+                  EdgeInsets.only(left: SizeConfig.safeBlockHorizontal * 3),
               child: Text(
                 'Trending',
                 style: TextStyle(
                     color: OurTheme().textColor,
-                    fontSize: OurTheme().headingSize,
+                    fontSize: SizeConfig.safeBlockHorizontal * 4,
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -69,9 +75,11 @@ class ScrollSection extends StatelessWidget {
           ],
         ),
         Container(
-          padding: EdgeInsets.only(left: 10),
+          padding: EdgeInsets.only(left: SizeConfig.safeBlockHorizontal * 2),
           color: OurTheme().primanryColor,
-          margin: EdgeInsets.only(bottom: 20),
+          margin: EdgeInsets.only(
+            bottom: SizeConfig.safeBlockVertical * 1,
+          ),
           height: SizeConfig.safeBlockVertical * 30,
           child: ListView.builder(
             itemBuilder: (context, index) {

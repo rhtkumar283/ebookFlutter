@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import './widgets/ourTheme.dart';
 import './widgets/scrollView.dart';
+import './config/sizeConfig.dart';
 //import './widgets/searchBar.dart';
 import './models/book.dart';
 //import '../widgets/ourTheme.dart';
@@ -144,7 +145,7 @@ class EbookMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //MediaQueryData mediaQuery = MediaQuery.of(context);
+    SizeConfig().init(context);
 
     return Scaffold(
       backgroundColor: OurTheme().primanryColor,
@@ -158,30 +159,28 @@ class EbookMain extends StatelessWidget {
           color: OurTheme().buttonActive,
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            //Search Widgets
-            // Container(
-            //   height: (mediaQuery.size.height -
-            //           mediaQuery.padding.top -
-            //           kBottomNavigationBarHeight) *
-            //       0.17,
-            //   child: Search(),
-            // ),
+      body: Column(
+        children: [
+          //Search Widgets
+          // Container(
+          //   height: (mediaQuery.size.height -
+          //           mediaQuery.padding.top -
+          //           kBottomNavigationBarHeight) *
+          //       0.17,
+          //   child: Search(),
+          // ),
 
-            //Horizontal Scroll Section
-            ScrollSection(_books),
+          //Horizontal Scroll Section
+          ScrollSection(_books),
 
-            //Flat buttons
-            //Foo(_books),
+          //Flat buttons
+          //Foo(_books),
 
-            //Vertical List
-            // SingleChildScrollView(
-            //     child: Container(height: 350, child: Foo(_books))),
-            Foo(_books),
-          ],
-        ),
+          //Vertical List
+          // SingleChildScrollView(
+          //     child: Container(height: 350, child: Foo(_books))),
+          Foo(_books),
+        ],
       ),
       bottomNavigationBar: CustomNavBarWidget(items: _navBarsItems()),
     );

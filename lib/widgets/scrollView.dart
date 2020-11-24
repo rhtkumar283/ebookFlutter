@@ -70,7 +70,9 @@ class ScrollSection extends StatelessWidget {
           padding: EdgeInsets.only(left: 10),
           color: OurTheme().primanryColor,
           margin: EdgeInsets.only(bottom: 20),
-          height: 230,
+          height: (MediaQuery.of(context).size.height -
+                  MediaQuery.of(context).padding.top) *
+              0.28,
           child: ListView.builder(
             itemBuilder: (context, index) {
               return getWidget(

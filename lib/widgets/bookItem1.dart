@@ -185,10 +185,10 @@ class MyStatelessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return SingleChildScrollView(
-      child: Container(
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      return SizedBox(
         height: SizeConfig.safeBlockVertical * 39.8,
-
         child: CustomScrollView(slivers: [
           SliverList(
             delegate: SliverChildBuilderDelegate(
@@ -222,7 +222,7 @@ class MyStatelessWidget extends StatelessWidget {
         //   },
         //   itemCount: book.length,
         // ),
-      ),
-    );
+      );
+    });
   }
 }

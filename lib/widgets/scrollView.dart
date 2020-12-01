@@ -28,7 +28,7 @@ class ScrollSection extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-                fontSize: SizeConfig.safeBlockHorizontal * 13,
+                fontSize: SizeConfig.safeBlockHorizontal * 12,
                 color: Colors.grey,
                 fontWeight: FontWeight.bold),
           ),
@@ -58,7 +58,7 @@ class ScrollSection extends StatelessWidget {
                 'Trending',
                 style: TextStyle(
                     color: OurTheme().textColor,
-                    fontSize: SizeConfig.safeBlockHorizontal * 4,
+                    fontSize: SizeConfig.safeBlockHorizontal * 5,
                     fontWeight: FontWeight.bold),
               ),
             ),

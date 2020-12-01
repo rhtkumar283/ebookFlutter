@@ -79,7 +79,7 @@ class FooState extends State<Foo> {
       child: Text(
         "$text",
         style: TextStyle(
-          fontSize: SizeConfig.safeBlockHorizontal * 4,
+          fontSize: SizeConfig.safeBlockHorizontal * 5,
         ),
       ),
     );

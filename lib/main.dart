@@ -27,6 +27,8 @@ class MyApp extends StatelessWidget {
 }
 
 class EbookMain extends StatelessWidget {
+  final GlobalKey _keyRed = GlobalKey();
+
   final List<Book> _books = [
     Book(
         id: 'b1',
